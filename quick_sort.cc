@@ -23,8 +23,8 @@ int partition(vector<int> &a, int left, int right) {
 
   while (1) {
     /// 像右边移动，找比基准小的值
-    while (a[++i] > flag);
-    while (a[--j] < flag);
+    while (a[++i] < flag);
+    while (a[--j] > flag);
     if (i < j) {
       swap(a[i], a[j]);
     } else {
@@ -61,7 +61,12 @@ void print_vector(const vector<int> &v) {
 }
 int main() {
 
-  vector<int> a = {2, 5, 3, 7, 9, 4, 8, 1, 6};
+  int n = 0;
+  cin >> n;
+  vector<int> a(n);
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+  }
   print_vector(a);
   qsort(a);
   print_vector(a);
